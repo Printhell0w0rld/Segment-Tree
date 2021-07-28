@@ -20,11 +20,10 @@ void build(int idx,int l,int r){
     }
     else{
        int m=(l+r)/2;
-        build(idx*2,l,m);
-        build(idx*2+1,m+1,r); 
-        tree[idx] =tree[idx*2]+tree[idx*2+1]; 
+       build(idx*2,l,m);
+       build(idx*2+1,m+1,r); 
+       tree[idx] =tree[idx*2]+tree[idx*2+1]; 
     }
-    
 }
  
 ll query(int ql, int qr, int idx, int l, int r){
@@ -39,7 +38,6 @@ ll query(int ql, int qr, int idx, int l, int r){
         return query(ql, qr, idx*2, l, m);
     }
     return query(ql, qr, idx*2, l, m)+query(ql, qr, idx*2+1, m+1, r);
-    
 }
  
 void update(int pos, int val, int idx, int l, int r){
@@ -67,9 +65,7 @@ int main(){
         }
         else{
             cout<<query(b, c-1, 1, 0, n-1) << "\n";
-        }
-        
+        }   
     }
-    
 }
 ```
